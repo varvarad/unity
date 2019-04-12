@@ -6,7 +6,7 @@ public class Spawner : MonoBehaviour
 {
     public GameObject CubePrefab;
     Vector3 Position;
-    public int Counter = 100;
+    public int Counter = 1000;
     int count;
 
     void Start()
@@ -17,16 +17,11 @@ public class Spawner : MonoBehaviour
     
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
             if (count < Counter)
             {
                 Position = new Vector3(Random.Range(60, 305), transform.position.y, Random.Range(50, 270));
                 Instantiate(CubePrefab, Position, Quaternion.identity);
                 count++;
             }
-        }
-        
-        
     }
 }
